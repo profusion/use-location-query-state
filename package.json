@@ -4,19 +4,33 @@
   "license": "MIT",
   "type": "module",
   "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
   "exports": {
     ".": "./dist/index.js",
     "./browserOptions": "./dist/options/browserWindowLocationOptions.js"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.4.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "install-peers-cli": "^2.2.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.4"
   },
   "scripts": {
     "build": "tsc",
     "install-peers": "install-peers",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "tsc",
+    "lint": "eslint src/**/*.ts"
   },
   "peerDependencies": {
     "react": ">16.8.6",
