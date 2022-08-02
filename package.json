@@ -4,10 +4,12 @@
   "license": "MIT",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
   "exports": {
     ".": "./dist/index.js",
-    "./browserOptions": "./dist/options/browserWindowLocationOptions.js"
+    "./options/*": "./dist/options/*.js",
+    "./browser-window-options": "./dist/options/browserWindowLocationOptions.js",
+    "./react-router-options": "./dist/options/reactRouterLocationOptions.js",
+    "./core": "./dist/useLocationQueryState.js"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
@@ -30,7 +32,7 @@
     "build": "tsc",
     "install-peers": "install-peers",
     "prepublishOnly": "tsc",
-    "lint": "eslint src/**/*.ts"
+    "lint": "eslint src/**/*"
   },
   "peerDependencies": {
     "react": ">16.8.6",
