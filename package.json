@@ -1,0 +1,28 @@
+{
+  "name": "@profusion/use-location-query-state",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./browserOptions": "./dist/options/browserWindowLocationOptions.js"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "install-peers-cli": "^2.2.0",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "install-peers": "install-peers",
+    "prepublishOnly": "tsc"
+  },
+  "peerDependencies": {
+    "react": ">16.8.6",
+    "react-router-dom": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=14.16"
+  }
+}
