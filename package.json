@@ -12,6 +12,8 @@
     "./core": "./dist/useLocationQueryState.js"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-angular": "^17.0.3",
     "@types/react": "^18.0.15",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
@@ -24,6 +26,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^7.0.0",
     "install-peers-cli": "^2.2.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4"
@@ -32,7 +35,8 @@
     "build": "tsc",
     "install-peers": "install-peers",
     "prepublishOnly": "tsc",
-    "lint": "eslint src/**/*"
+    "lint": "eslint src/**/*",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "react": ">16.8.6",
