@@ -1,3 +1,5 @@
 /.git
 /src
 /examples
+/.scripts
+.DS_Store

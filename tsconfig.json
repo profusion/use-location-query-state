@@ -3,7 +3,7 @@
     "target": "es2019",
     "module": "Node16",
     "moduleResolution": "Node16",
-    "outDir": "./dist",
+    "outDir": "./dist/esm",
     "declaration": true,
     "declarationMap": true,
     "noImplicitAny": true,
