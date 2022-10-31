@@ -1,6 +1,6 @@
 {
   "name": "@profusion/use-location-query-state",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "license": "MIT",
   "types": "./dist/esm/index.d.ts",
   "main": "./dist/cjs/index.js",
