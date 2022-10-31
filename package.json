@@ -54,9 +54,10 @@
     "build:cjs": "tsc --outDir dist/cjs --moduleResolution node",
     "build": "run-p build:esm build:cjs && sh ./.scripts/batch-packages.sh",
     "install-peers": "install-peers -f",
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "run-s clean install-peers build",
     "lint": "eslint src/**/*",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "clean": "rm -rf dist"
   },
   "peerDependencies": {
     "react": ">16.8.6",
