@@ -6,6 +6,7 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "type": "module",
+  "repository": "https://github.com/profusion/use-location-query-state",
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",

@@ -292,8 +292,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@profusion/use-location-query-state@../..":
-  version "1.0.0"
+"@profusion/use-location-query-state@@profusion/use-location-query-state@*":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@profusion/use-location-query-state/-/use-location-query-state-1.0.3.tgz#7e245324acb548d0804fd8ad31a472fb65f50acf"
+  integrity sha512-53+ccRB8CLZACJA9orb6hZtr9cX0+g9wCuFeliT2x+U6yB5Gp8lE8U7i9Z6hX7ra3ADdyfLerakBarEZU1Pwng==
 
 "@types/prop-types@*":
   version "15.7.5"
