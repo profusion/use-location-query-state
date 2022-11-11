@@ -31,4 +31,7 @@ const useWrappedLocationQueryState = <
   });
 };
 
+export * from './options/index.js';
+export * from './converters/createFieldBasedConverter.js';
+
 export default useWrappedLocationQueryState;

@@ -16,6 +16,10 @@
       "import": "./dist/esm/options/*.js",
       "require": "./dist/cjs/options/*.js"
     },
+    "./converters/*": {
+      "import": "./dist/esm/converters/*.js",
+      "require": "./dist/cjs/converters/*.js"
+    },
     "./browser-window-options": {
       "import": "./dist/esm/options/browserWindowLocationOptions.js",
       "require": "./dist/cjs/options/browserWindowLocationOptions.js"
