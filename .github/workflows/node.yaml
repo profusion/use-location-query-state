@@ -1,0 +1,79 @@
+name: Checking code
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  setup:
+    if: github.event.pull_request.draft != true
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: .nvmrc
+
+    - name: Cache node_modules
+      uses: actions/cache@v3
+      id: node_modules_cache
+      with:
+        key: node_modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+        path: node_modules
+
+    - run: yarn install --frozen-lockfile --non-interactive
+      if: steps.node_modules_cache.outputs.cache-hit != 'true'
+    - run: yarn install-peers
+      if: steps.node_modules_cache.outputs.cache-hit != 'true'
+    - name: Ensure project is clean
+      uses: numtide/clean-git-action@v1
+      if: steps.cache-node_modules.outputs.cache-hit != 'true'
+
+  build:
+    if: github.event.pull_request.draft != true
+    needs: setup
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: .nvmrc
+
+    - name: Cache node_modules
+      uses: actions/cache@v3
+      id: use_node_modules
+      with:
+        key: node_modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+        path: node_modules
+    - run: yarn build
+    - name: Ensure project is clean
+      uses: numtide/clean-git-action@v1
+  
+  publish-dry-run:
+    if: github.event.pull_request.draft != true
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: .nvmrc
+    - name: Cache node_modules
+      uses: actions/cache@v3
+      id: use_node_modules
+      with:
+        key: node_modules-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+        path: node_modules
+
+    - name: publish --dry-run
+      run: npm publish --dry-run
+
