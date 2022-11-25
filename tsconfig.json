@@ -6,6 +6,7 @@
     "outDir": "./dist/esm",
     "declaration": true,
     "declarationMap": true,
+    "declarationDir": "./dist/types",
     "noImplicitAny": true,
     "sourceMap": false,
     "removeComments": false,

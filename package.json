@@ -2,7 +2,7 @@
   "name": "@profusion/use-location-query-state",
   "version": "1.0.4",
   "license": "MIT",
-  "types": "./dist/esm/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "files": ["dist"],
@@ -57,7 +57,7 @@
   },
   "scripts": {
     "build:esm": "tsc",
-    "build:cjs": "tsc --outDir dist/cjs --moduleResolution node",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "build": "run-p build:esm build:cjs && sh ./.scripts/batch-packages.sh",
     "install-peers": "install-peers -f",
     "prepublishOnly": "run-s clean install-peers build",
