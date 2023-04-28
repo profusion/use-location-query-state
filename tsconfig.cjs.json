@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "declarationDir": null,
+    "declarationMap": false,
+    "moduleResolution": "node",
+    "outDir": "./dist/cjs"
+  }
+}

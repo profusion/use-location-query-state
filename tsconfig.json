@@ -5,6 +5,7 @@
     "moduleResolution": "Node16",
     "outDir": "./dist/esm",
     "declaration": true,
+    "declarationDir": "./dist/types",
     "declarationMap": true,
     "noImplicitAny": true,
     "sourceMap": false,

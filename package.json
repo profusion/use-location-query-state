@@ -2,7 +2,7 @@
   "name": "@profusion/use-location-query-state",
   "version": "1.0.4",
   "license": "MIT",
-  "types": "./dist/esm/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "files": ["dist"],
@@ -10,26 +10,32 @@
   "repository": "https://github.com/profusion/use-location-query-state",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/esm/index.js",
       "require": "./dist/cjs/index.js"
     },
     "./options/*": {
+      "types": "./dist/types/options/*.d.ts",
       "import": "./dist/esm/options/*.js",
       "require": "./dist/cjs/options/*.js"
     },
     "./converters/*": {
+      "types": "./dist/types/converters/*.d.ts",
       "import": "./dist/esm/converters/*.js",
       "require": "./dist/cjs/converters/*.js"
     },
     "./browser-window-options": {
+      "types": "./dist/types/options/browserWindowLocationOptions.d.ts",
       "import": "./dist/esm/options/browserWindowLocationOptions.js",
       "require": "./dist/cjs/options/browserWindowLocationOptions.js"
     },
     "./react-router-options": {
+      "types": "./dist/types/options/reactRouterLocationOptions.d.ts",
       "import": "./dist/esm/options/reactRouterLocationOptions.js",
       "require": "./dist/cjs/options/reactRouterLocationOptions.js"
     },
     "./core": {
+      "types": "./dist/types/useLocationQueryState.d.ts",
       "import": "./dist/esm/useLocationQueryState.js",
       "require": "./dist/cjs/useLocationQueryState.js"
     }
@@ -58,7 +64,7 @@
   },
   "scripts": {
     "build:esm": "tsc",
-    "build:cjs": "tsc --outDir dist/cjs --moduleResolution node",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
     "build": "run-p build:esm build:cjs && sh ./.scripts/batch-packages.sh",
     "install-peers": "install-peers -f",
     "prepublishOnly": "run-s clean install-peers build",
