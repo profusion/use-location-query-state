@@ -1,11 +1,13 @@
 {
   "name": "@profusion/use-location-query-state",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "repository": "https://github.com/profusion/use-location-query-state",
   "exports": {
